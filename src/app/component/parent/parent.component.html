@@ -1,0 +1,6 @@
+
+<div [formGroup]="formGroup">
+    <app-time-picker formControlName="time" required="true"></app-time-picker>
+</div>
+
+<button [disabled]="checkValidation()">submit</button>
