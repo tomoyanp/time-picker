@@ -1,7 +1,11 @@
 <div class="input-container">
-    <input type="text" #input (input)="onChange($event.target.value)" (blur)="onTouched()">
-    <div class="minus" (click)="minus()"></div>
-    <div class="plus" (click)="plus()"></div>
+    <input type="text" #input [placeholder]="placeholder" (input)="onChange($event.target.value)" (blur)="onTouched()">
+    <div class="icon-box" (click)="minus()">
+        <div class="minus"></div>
+    </div>
+    <div class="icon-box" (click)="plus()">
+        <div class="plus"></div>
+    </div>
     <div *ngIf="controlDir && !controlDir.control.valid">
         <span *ngIf="controlDir.control.errors.format">
             HH:MMで入力してください

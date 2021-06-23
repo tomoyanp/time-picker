@@ -2,33 +2,63 @@
     display: flex;
 }
 
+$border-color: rgba(0, 0, 0, 0.3);
+$border-focus-color: rgba(0, 0, 200, 0.7);
+$padding: 5px;
+$font-color: rgba(0, 0, 0, 0.6);
+
 input {
-    font-size: 14px;
-    width: 35px;
+    font-size: 16px;
+    color: $font-color;
+    max-width: 60px;
+    outline: none;
     border: none;
-    border-bottom: solid 1px rgba(0,0,0);
-    padding-bottom: 2px;
+    border-bottom: solid 1px $border-color;
+    padding: $padding;
 }
 
 input:focus, input:active {
-    font-size: 14px;
-    width: 35px;
-    border: none;
-    border-bottom: solid 1px rgba(0,0,0);
-    padding-bottom: 2px;
+    border-bottom: solid 1px $border-focus-color;
+}
+
+.icon-box {
+    border-bottom: solid 1px $border-color;
+    cursor: pointer;
+    position: relative;
+    width: 20px;
+}
+
+input:focus ~ .icon-box {
+    border-bottom: solid 1px $border-focus-color;
+}
+
+.icon-box:last-child {
+    padding-right: $padding;
 }
 
 .plus{
-  border-top: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 10px solid rgba(0,0,0,0.2);
+    position: absolute;
+    bottom: 10px;
+    border-top: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid rgba(0,0,0,0.2);
+    border-left: 10px solid transparent;
 }
 
 .minus{
-  border-top: 10px solid transparent;
-  border-right: 10px solid rgba(0, 0, 0, 0.2);
-  border-bottom: 10px solid transparent;
-  border-left: 10px solid transparent;
-  margin-right: 5px;
+    position: absolute;
+    top: 10px;
+    border-top: 10px solid rgba(0, 0, 0, 0.2);
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid transparent;
+    margin-right: 5px;
+}
+
+.plus:hover {
+    border-bottom: 10px solid rgba(0,0,0,0.7);
+}
+
+.minus:hover {
+    border-top: 10px solid rgba(0, 0, 0, 0.7);
 }

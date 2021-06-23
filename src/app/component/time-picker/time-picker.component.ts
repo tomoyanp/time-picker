@@ -8,7 +8,7 @@ import { AbstractControl, ControlValueAccessor, NgControl, NG_VALUE_ACCESSOR, Va
 })
 export class TimePickerComponent implements AfterViewInit, OnInit, ControlValueAccessor {
   @ViewChild('input', { read: ElementRef, static: false }) public input: ElementRef;
-  @Input() required: boolean = false;
+  @Input() placeholder = '';
 
   onChange: (obj: any) => void;
   onTouched: () => void;
@@ -18,10 +18,6 @@ export class TimePickerComponent implements AfterViewInit, OnInit, ControlValueA
 
   constructor(@Self() public controlDir: NgControl) {
     controlDir.valueAccessor = this;
-  }
-
-  is(value: any) {
-    return !(this.initialValue == null);
   }
 
   ngOnInit() {
@@ -189,6 +185,4 @@ export class TimePickerComponent implements AfterViewInit, OnInit, ControlValueA
     this.beforeValue = '00:00';
     return;
   }
-
-
 }

@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "time-picker"
+    }
+  },
+  "defaultProject": "time-picker",
+  "cli": {
+    "analytics": false
+  }
 }
